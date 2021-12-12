@@ -1,6 +1,9 @@
 # mvg_utils
 
-#### Commonly used commands
+
+#### FAQ
+
+**What are some commonly used commands to interact with slurm?**
 
 ```
 squeue -u wpq
@@ -13,8 +16,6 @@ sinfo
 sinfo --summarize
 sinfo --node <nodename> --long
 ```
-
-#### FAQ
 
 **What are the specifications of the machines in the cluster?**
 
