@@ -22,7 +22,7 @@ Details in [GroupMachines](https://projects.csail.mit.edu/cgi-bin/wiki/view/Goll
 - `basil` is the cluster master node.
 - `turmeric` is a GPU machine that Maz took off cluster for personal use.
 
-**How to revive machine that is down**
+**How to revive a machine that is down**
 
 If a machine is down, try to reboot the machines remotely. If ssh hangs, ask TIG to manually reboot the machines, with a hard press, by emailing `help@csail.mit.edu` with the node names. The rebooted machines has drain slurm state, use `scontrol` to set the state to idle.
 
@@ -36,7 +36,7 @@ sudo scontrol update nodename=<nodename> state=idle
 
 **How to check which machine has nvml driver/library version mismatch error**
 
-After CUDA driver is udpated, a machine may generate error message `Failed to initialize NVML: Driver/library version mismatch` when running `nvidia-smi`. This problem can be fixed with a system reboot, e.g., `sudo reboot`. Instead of logging in to every machine to check if version mismatch happens, run the following commands to find out which machine has this problem, and reboot only those machines.
+After CUDA driver is updated, a machine may generate error message `Failed to initialize NVML: Driver/library version mismatch` when running `nvidia-smi`. Fix it with a system reboot, e.g., `sudo reboot`. Instead of logging in to every machine to check for version mismatch, run the following commands to find out which machine has version mismatch, and reboot manually only those machines.
 
 ```
 cd check_gpu_available
