@@ -18,9 +18,23 @@ sinfo | grep drain
 sudo scontrol update nodename=<nodename> state=idle
 ```
 
-#### Utilities
+#### FAQ
 
-**Check which machine has nvml driver/library version mismatch error**
+**What are the specifications of machines in the cluster**
+
+Details in [GroupMachines](https://projects.csail.mit.edu/cgi-bin/wiki/view/Gollandgrp/GroupMachines). Some points: 
+- `basil` is the cluster master node.
+- `turmeric` is a GPU machine that Maz took off cluster for personal use.
+
+**How to revive machine that is down**
+
+If a machine is down, try to reboot the machines remotely. If ssh hangs, ask TIG to manually reboot the machines, with a hard press, by emailing `help@csail.mit.edu` with the node names.
+
+```
+sinfo | grep down
+```
+
+**How to check which machine has nvml driver/library version mismatch error**
 
 After CUDA driver is udpated, a machine may generate error message `Failed to initialize NVML: Driver/library version mismatch` when running `nvidia-smi`. This problem can be fixed with a system reboot, e.g., `sudo reboot`. Instead of logging in to every machine to check if version mismatch happens, run the following commands to find out which machine has this problem, and reboot only those machines.
 
