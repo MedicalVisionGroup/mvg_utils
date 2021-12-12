@@ -12,10 +12,6 @@ scancel -n <jobname>
 sinfo
 sinfo --summarize
 sinfo --node <nodename> --long
-
-# Fix drained node
-sinfo | grep drain
-sudo scontrol update nodename=<nodename> state=idle
 ```
 
 #### FAQ
@@ -28,10 +24,14 @@ Details in [GroupMachines](https://projects.csail.mit.edu/cgi-bin/wiki/view/Goll
 
 **How to revive machine that is down**
 
-If a machine is down, try to reboot the machines remotely. If ssh hangs, ask TIG to manually reboot the machines, with a hard press, by emailing `help@csail.mit.edu` with the node names.
+If a machine is down, try to reboot the machines remotely. If ssh hangs, ask TIG to manually reboot the machines, with a hard press, by emailing `help@csail.mit.edu` with the node names. The rebooted machines has drain slurm state, use `scontrol` to set the state to idle.
 
 ```
+# Check for machine that is down
 sinfo | grep down
+# Fix drained node
+sinfo | grep drain
+sudo scontrol update nodename=<nodename> state=idle
 ```
 
 **How to check which machine has nvml driver/library version mismatch error**
