@@ -20,7 +20,7 @@ sinfo --node <nodename> --long
 **What are the specifications of the machines in the cluster?**
 
 Details in [GroupMachines](https://projects.csail.mit.edu/cgi-bin/wiki/view/Gollandgrp/GroupMachines). Some points: 
-- `basil` is the cluster master node.
+- `basil`|`coriander` is the cluster master|backup node.
 - `turmeric` is a GPU machine that Maz took off cluster for personal use.
 
 **How to revive a machine that is down?**
@@ -67,7 +67,6 @@ One way is to create symlinks on every machine in the cluster to a target file t
 **What to do when slurm is not responding?**
 
 When you see `squeue` return `Unable to contact slurm controller (connect failure)`, the master node is potentially down. See the trouble shooting guide from [slurm](https://slurm.schedmd.com/troubleshoot.html). Briefly,
-
 
 ```
 # see if primary/backup controllers are responding
