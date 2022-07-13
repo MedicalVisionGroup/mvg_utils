@@ -72,19 +72,22 @@ When you see `squeue` return `Unable to contact slurm controller (connect failur
 ```
 # see if primary/backup controllers are responding
 scontrol ping
+# check slurmtld log file for debugging
+sudo cat /var/log/slurm-llnl/slurmctld.log
 # restart slurmctld if inactive
 sudo systemctl restart slurmctld
 
-# check slurmtld log file for debugging
-sudo cat /var/log/slurm-llnl/slurmctld.log
+# restart slurmd on individual node if they are down 
+ps -el | grep slurmd
+sudo systemctl restart slurmctld
 
-# check slurm.conf to create a backup controller {coriander}
+# Modify slurm.conf to setup a backup controller {coriander}
 # note configuration in /etc are soft linked 
 #     slurm-llnl -> /data/vision/polina/slurm-conf
 cat /etc/slurm-llnl/slurm.conf
 ```
 
-When submitting jobs afterwards, some canceled job could persist in CG state. Try sudo reboot those node to fix this issue.
+When submitting jobs afterwards, some canceled job could persist in CG state. The issue may be that the `slurmd` is inactive. Try ssh to these nodes and run `systemctl restart slurmd` or, less gracefully, `sudo reboot` to fix this issue.
 
 
 #### Info 
