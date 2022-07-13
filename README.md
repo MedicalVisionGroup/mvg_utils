@@ -44,6 +44,9 @@ cd check_gpu_available
 make check_gpu
 ```
 
+In case where a reboot does not help, try `sudo apt --fix-broken install` to repair broken packages first.
+
+
 **How are cuda managed on cluster?**
 
 The cluster has its cuda installation managed by `puppet`. Use puppet to check if an accompanying package, e.g., `cudnn`, is installed alongside with the driver and software. 
@@ -61,9 +64,27 @@ One way is to create symlinks on every machine in the cluster to a target file t
 ```
 
 
-**How to run multiple scripts in parallel, i.e., for sweeping through hyperparameters?**
+**What to do when slurm is not responding?**
+
+When you see `squeue` return `Unable to contact slurm controller (connect failure)`, the master node is potentially down. See the trouble shooting guide from [slurm](https://slurm.schedmd.com/troubleshoot.html). Briefly,
 
 
+```
+# see if primary/backup controllers are responding
+scontrol ping
+# restart slurmctld if inactive
+sudo systemctl restart slurmctld
+
+# check slurmtld log file for debugging
+sudo cat /var/log/slurm-llnl/slurmctld.log
+
+# check slurm.conf to create a backup controller {coriander}
+# note configuration in /etc are soft linked 
+#     slurm-llnl -> /data/vision/polina/slurm-conf
+cat /etc/slurm-llnl/slurm.conf
+```
+
+When submitting jobs afterwards, some canceled job could persist in CG state. Try sudo reboot those node to fix this issue.
 
 
 #### Info 
