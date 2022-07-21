@@ -76,9 +76,11 @@ sudo cat /var/log/slurm-llnl/slurmctld.log
 # restart slurmctld if inactive
 sudo systemctl restart slurmctld
 
-# restart slurmd on individual node if they are down 
+# check if slurmd is active
 ps -el | grep slurmd
-sudo systemctl restart slurmctld
+systemctl status slurmd.service
+# restart slurmd on individual node if they are down 
+sudo systemctl restart slurmd
 
 # Modify slurm.conf to setup a backup controller {coriander}
 # note configuration in /etc are soft linked 
