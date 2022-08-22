@@ -9,8 +9,9 @@
 squeue -u wpq
 squeue --format="%.18i %.9P %.30j %.8u %.8T %.10M %.9l %.6D %R"
 
-scancel -j <jobid>
+scancel <jobid>
 scancel -n <jobname>
+scancel -u <username>
 
 sinfo
 sinfo --summarize
