@@ -91,6 +91,18 @@ cat /etc/slurm-llnl/slurm.conf
 
 When submitting jobs afterwards, some canceled job could persist in CG state. The issue may be that the `slurmd` is inactive. Try ssh to these nodes and run `systemctl restart slurmd` or, less gracefully, `sudo reboot` to fix this issue.
 
+**How do the GPUs compare?**
+
+There is a total of 104 GPUs on the cluster. The following table tabulates some information about the GPUs on the cluster.
+
+| GPU              	| #  	| release date 	| GPU memory (GB) 	| approx. speed factor 	|
+|------------------	|----	|--------------	|-----------------	|----------------------	|
+| Titan XP         	| 40 	| Q2 2017      	| 12              	| 1                    	|
+| RTX 2080-Ti      	| 36 	| Q3 2018      	| 11              	| 1.2                  	|
+| Quadro RTX 5000  	| 12 	| Q1 2019      	| 16              	| 1                    	|
+| Quadro RTX A6000 	| 16 	| Q3 2020      	| 48              	| 1.5                  	|
+
+
 
 #### Info 
 
