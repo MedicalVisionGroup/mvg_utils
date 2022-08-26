@@ -4,19 +4,6 @@
 #### FAQ
 
 
-**How do the GPUs compare?**
-
-There is a total of 104 GPUs on the cluster. The table tabulates some information about the GPUs on the cluster.
-
-| GPU              	| #  	| release date 	| GPU memory (GB) 	| approx. speed factor 	|
-|------------------	|----	|--------------	|-----------------	|----------------------	|
-| Titan XP         	| 40 	| Q2 2017      	| 12              	| 1                    	|
-| RTX 2080-Ti      	| 36 	| Q3 2018      	| 11              	| 1.2                  	|
-| Quadro RTX 5000  	| 12 	| Q1 2019      	| 16              	| 1                    	|
-| Quadro RTX A6000 	| 16 	| Q3 2020      	| 48              	| 1.5                  	|
-
-
-
 **What are some commonly used commands to interact with slurm?**
 
 ```
@@ -34,9 +21,18 @@ sinfo --node <nodename> --long
 
 **What are the specifications of the machines in the cluster?**
 
-Details in [GroupMachines](https://projects.csail.mit.edu/cgi-bin/wiki/view/Gollandgrp/GroupMachines). Some points: 
+Details in [GroupMachines](https://projects.csail.mit.edu/cgi-bin/wiki/view/Gollandgrp/GroupMachines) and summarized in the table below. Some points: 
 - `basil`|`coriander` is the cluster master|backup node.
 - `turmeric` is a GPU machine that Maz took off cluster for personal use.
+
+
+| GPU              	| #  	| release date 	| GPU memory (GB) 	| approx. speed factor 	|
+|------------------	|----	|--------------	|-----------------	|----------------------	|
+| Titan XP         	| 40 	| Q2 2017      	| 12              	| 1                    	|
+| RTX 2080-Ti      	| 36 	| Q3 2018      	| 11              	| 1.2                  	|
+| Quadro RTX 5000  	| 12 	| Q1 2019      	| 16              	| 1                    	|
+| Quadro RTX A6000 	| 16 	| Q3 2020      	| 48              	| 1.5                  	|
+
 
 **How to revive a machine that is down?**
 
