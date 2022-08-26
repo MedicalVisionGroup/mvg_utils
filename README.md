@@ -44,7 +44,7 @@ cd check_gpu_available
 make check_gpu
 ```
 
-In case where a reboot does not help, try `sudo apt --fix-broken install` to repair broken packages first.
+In case where a reboot does not help, e.g., on the A6000 machines `{sumac, urfa-biber}` for some reason, try `sudo apt --fix-broken install` to repair broken packages first, then `sudo reboot`.
 
 
 **How are cuda managed on cluster?**
