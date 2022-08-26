@@ -6,7 +6,7 @@
 
 **How do the GPUs compare?**
 
-There is a total of 104 GPUs on the cluster. The following table tabulates some information about the GPUs on the cluster.
+There is a total of 104 GPUs on the cluster. The table tabulates some information about the GPUs on the cluster.
 
 | GPU              	| #  	| release date 	| GPU memory (GB) 	| approx. speed factor 	|
 |------------------	|----	|--------------	|-----------------	|----------------------	|
