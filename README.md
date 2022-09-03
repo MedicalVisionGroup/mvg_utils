@@ -101,6 +101,16 @@ cat /etc/slurm-llnl/slurm.conf
 
 When submitting jobs afterwards, some canceled job could persist in CG state. The issue may be that the `slurmd` is inactive. Try ssh to these nodes and run `systemctl restart slurmd` or, less gracefully, `sudo reboot` to fix this issue.
 
+**How to fix GPU Fan ERR! when running nvidia-smi?**
+
+```
+sudo rmmod nvidia_uvm
+sudo modprobe nvidia_uvm
+sudo reboot
+```
+
+
+
 
 #### Info 
 
