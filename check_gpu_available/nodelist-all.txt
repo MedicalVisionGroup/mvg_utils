@@ -22,7 +22,6 @@ thyme
 wasabi
 zaatar
 aniseed
-caraway
 juniper
 lemongrass
 rosemary

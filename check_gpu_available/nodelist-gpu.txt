@@ -1,6 +1,5 @@
 anise
 bergamot
-caraway
 cassia
 chili
 clove
@@ -22,7 +21,6 @@ rosemary
 sassafras
 sumac
 thyme
-turmeric
 urfa-biber
 wasabi
 zaatar
